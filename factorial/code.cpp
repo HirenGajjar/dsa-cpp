@@ -2,15 +2,20 @@
 using namespace std;
 int main()
 {
-
-    double num, factorial = 1;
+    int num, fact = 1;
     cout << "Enter the number : " << endl;
     cin >> num;
-    for (int i = 1; i <= num; i++)
+    if (num == 0)
     {
-        factorial *= i;
+        cout << "Factorial of 0 is 1" << endl;
     }
-
-    cout << "Factorial of " << num << " is " << factorial << endl;
+    else
+    {
+        for (int i = 1; i <= num; i++)
+        {
+            fact *= i;
+        }
+        cout << "Factorial of " << num << " is " << fact << endl;
+    }
     return 0;
 }
