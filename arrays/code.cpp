@@ -1,26 +1,21 @@
 #include <iostream>
 using namespace std;
+void double_array(int array[])
+{
+    cout << "in function : " << endl;
+    for (int i = 0; i <= 3; i++)
+    {
+        array[i] *= 2;
+    }
+}
 int main()
 {
-
-    int marks[5] = {67, 68, 87, 66, 90};
-
-    for (int i = 0; i <= (sizeof(marks) / sizeof(int)) - 1; i++)
+    int array[] = {1, 2, 3, 4};
+    double_array(array);
+    cout << "main : " << endl;
+    for (int i = 0; i <= 3; i++)
     {
-        cout << marks[i] << endl;
-    }
-
-    int size = 3, age[size];
-
-    cout << "Enter the age : ";
-    for (int i = 0; i <= ((sizeof(age) / sizeof(int)) - 1); i++)
-    {
-        cin >> age[i];
-    }
-
-    for (int i = 0; i <= ((sizeof(age) / sizeof(int)) - 1); i++)
-    {
-        cout << age[i] << " ," << endl;
+        cout << array[i];
     }
     return 0;
 }
