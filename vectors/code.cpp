@@ -25,7 +25,34 @@ int main()
         cout << endl
              << vec.at(i) << " ";
     }
-    cout << endl;
+
+    /*Size vs Capacity*/
+
+    vector<int> new_vec = {1, 2, 3, 4};
+    cout << endl
+         << "Size of the new_vec : " << new_vec.size() << " and capacity is " << new_vec.capacity();
+
+    new_vec.push_back(5);
+    cout << endl
+         << "Size of the new_vec : " << new_vec.size() << " and capacity is " << new_vec.capacity();
+
+    new_vec.push_back(6);
+    cout << endl
+         << "Size of the new_vec : " << new_vec.size() << " and capacity is " << new_vec.capacity();
+
+    new_vec.push_back(7);
+    cout << endl
+         << "Size of the new_vec : " << new_vec.size() << " and capacity is " << new_vec.capacity();
+
+    new_vec.push_back(8);
+    cout << endl
+         << "Size of the new_vec : " << new_vec.size() << " and capacity is " << new_vec.capacity();
+    new_vec.push_back(9);
+    cout << endl
+         << "Size of the new_vec : " << new_vec.size() << " and capacity is " << new_vec.capacity();
+
+    cout
+        << endl;
 
     return 0;
 }
