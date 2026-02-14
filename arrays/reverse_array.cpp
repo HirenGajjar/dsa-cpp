@@ -12,8 +12,9 @@ void reverse_array(int array[], int size)
 }
 int main()
 {
-    int array[] = {1, 2, 3, 4, 3, 2, 2, 1, 33, 22, 1, 10};
+    int array[] = {1, 2, 3, 4, 5};
     int size = (sizeof(array) / sizeof(int)) - 1;
+    cout << "Reverse : " << endl;
     reverse_array(array, size);
     for (int i = 0; i <= size; i++)
     {
