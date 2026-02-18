@@ -1,9 +1,13 @@
 #include <iostream>
 using namespace std;
-long power_x_n(long num, long power)
+double power_x_n(double num, long long power)
 {
-    long answer = 1;
-
+    double answer = 1;
+    if (power < 0)
+    {
+        num = 1 / num;
+        power = -power;
+    }
     while (power > 0)
     {
         if (power % 2 == 0)
@@ -22,13 +26,14 @@ long power_x_n(long num, long power)
 }
 int main()
 {
-    long num, power;
+    double num;
+    long long power;
     cout << "Enter the number : ";
     cin >> num;
     cout << endl
          << "Enter the value of power : ";
     cin >> power;
-    long answer = power_x_n(num, power);
+    double answer = power_x_n(num, power);
     cout << answer;
     cout << endl;
     return 0;
