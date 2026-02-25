@@ -29,6 +29,10 @@ int gcd_hcf_optimized(int num_1, int num_2)
 }
 int gcd_hcf_best(int num_1, int num_2)
 {
+    if (num_1 == 0 && num_2 == 0)
+        return 0;
+    num_1 = abs(num_1);
+    num_2 = abs(num_2);
     while (num_2 > 0)
     {
         int rem = num_1 % num_2;
