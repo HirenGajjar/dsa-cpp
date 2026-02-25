@@ -1,6 +1,62 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+void is_prime_new(int number)
+{
+    if (number == 2)
+    {
+        cout << number << " is prime.";
+        return;
+    }
+    if ((number < 2) || (number % 2 == 0))
+    {
+        cout << number << " is not prime.";
+        return;
+    }
+
+    bool is_prime = true;
+    for (int i = 3; i * i <= number; i += 2)
+    {
+        if (number % i == 0)
+        {
+            is_prime = false;
+            break;
+        }
+    }
+
+    if (is_prime)
+    {
+        cout << number << " is prime.";
+    }
+    else
+    {
+        cout << number << " is not prime";
+    }
+}
+void is_prime(int number)
+{
+    if (number < 2)
+    {
+        cout << number << " is not a prime number." << endl;
+        return;
+    }
+
+    bool prime = true;
+
+    for (int i = 2; i * i <= number; i++)
+    {
+        if (number % i == 0)
+        {
+            prime = false;
+            break;
+        }
+    }
+
+    if (prime)
+        cout << number << " is a prime number." << endl;
+    else
+        cout << number << " is not a prime number." << endl;
+}
 void all_possible_divisors(int number)
 {
     for (int i = 1; i <= number / 2; i++)
@@ -28,6 +84,33 @@ void find_divisors(int number)
             }
         }
     }
+}
+void find_all_possible_divisors(int number)
+{
+    if (number <= 0)
+    {
+        cout << "Invalid input.";
+    }
+    if (number == 1)
+    {
+        cout << 1;
+    }
+    if (number > 1)
+    {
+        cout << 1 << " ";
+        for (int i = 2; i <= sqrt(number); i++)
+        {
+            if (number % i == 0)
+            {
+                cout << i << " ";
+                if ((number / i) != i)
+                {
+                    cout << (number / i) << " ";
+                }
+            }
+        }
+    }
+    cout << number << " ";
 }
 void is_armstrong(int number)
 {
@@ -131,11 +214,18 @@ int main()
     check_palindrome(number);
     is_armstrong(number);
 
-    cout << "All possible divisors for (method 1)" << number << "are :";
+    cout << "All possible divisors for (method 1)" << number << " are :";
     all_possible_divisors(number);
 
-    cout << "All possible divisors for (method 2)" << number << "are :";
+    cout << "All possible divisors for (method 2)" << number << " are :";
     find_divisors(number);
+
+    cout << endl
+         << "All possible divisor for (method 3) " << number << " are : ";
+    find_all_possible_divisors(number);
+    cout << endl;
+    is_prime(number);
+
     cout
         << endl;
     return 0;
